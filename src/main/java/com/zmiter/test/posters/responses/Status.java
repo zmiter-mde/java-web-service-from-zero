@@ -1,4 +1,4 @@
-package com.zmiter.test.posters.entities;
+package com.zmiter.test.posters.responses;
 
 public class Status {
 
