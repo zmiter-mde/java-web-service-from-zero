@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface PosterMapper {
 
-    List<Poster> getAllPosters();
     int insertPoster(Poster poster);
+    Poster getPoster(Integer id);
+    List<Poster> getAllPosters();
+
 }

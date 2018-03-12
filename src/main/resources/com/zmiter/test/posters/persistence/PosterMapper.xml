@@ -3,12 +3,16 @@
     <cache />
 
     <select id="getAllPosters" resultType="Poster">
-        SELECT id, name FROM testtable
+        SELECT id, filename FROM posters
+    </select>
+
+    <select id="getPoster" resultType="Poster" parameterType="Integer">
+        SELECT id, filename FROM posters WHERE id = #{id}
     </select>
 
     <insert id="insertPoster" parameterType="Poster">
-        INSERT INTO testtable (name)
-        VALUES (#{name})
+        INSERT INTO posters (filename)
+        VALUES (#{filename})
     </insert>
 
 </mapper>

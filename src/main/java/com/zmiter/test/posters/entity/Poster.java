@@ -7,15 +7,15 @@ public class Poster implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer id;
-    private String name;
+    private String filename;
 
-    public Poster(Integer id, String name) {
+    public Poster(Integer id, String filename) {
         this.id = id;
-        this.name = name;
+        this.filename = filename;
     }
 
-    public Poster(String name) {
-        this.name = name;
+    public Poster(String filename) {
+        this.filename = filename;
     }
 
     public Integer getId() {
@@ -26,11 +26,11 @@ public class Poster implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFilename() {
+        return filename;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }

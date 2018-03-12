@@ -14,14 +14,11 @@ public class PosterServiceImpl implements PosterService {
     private PosterMapper posterMapper;
 
     public void addPoster(Poster poster) {
-        System.out.println("Adding a poster here!!!");
-        // Invoke mybatis
+        posterMapper.insertPoster(poster);
     }
 
     public Poster getPoster(Integer id) {
-        System.out.println("Fetching a poster with id = " + id);
-        // Invoke mybatis
-        return null;
+        return posterMapper.getPoster(id);
     }
 
     public List<Poster> getAllPosters() {
