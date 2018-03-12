@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PosterService {
 
-    void addPoster(Poster poster);
+    Poster addPoster(Poster poster);
 
     Poster getPoster(Integer id);
 

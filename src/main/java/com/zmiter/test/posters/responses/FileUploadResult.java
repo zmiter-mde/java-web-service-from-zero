@@ -2,12 +2,22 @@ package com.zmiter.test.posters.responses;
 
 public class FileUploadResult {
 
+    private int fileId;
     private boolean uploaded;
     private String message;
 
-    public FileUploadResult(boolean uploaded, String message) {
+    public FileUploadResult(int fileId, boolean uploaded, String message) {
+        this.fileId = fileId;
         this.uploaded = uploaded;
         this.message = message;
+    }
+
+    public int getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
     }
 
     public boolean isUploaded() {

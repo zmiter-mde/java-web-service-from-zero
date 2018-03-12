@@ -13,8 +13,13 @@ public class PosterServiceImpl implements PosterService {
     @Autowired
     private PosterMapper posterMapper;
 
-    public void addPoster(Poster poster) {
-        posterMapper.insertPoster(poster);
+    public Poster addPoster(Poster poster) {
+        System.out.println("Id before insert: " + poster.getId());
+        int rowsAffected = posterMapper.insertPoster(poster);
+        System.out.println("Rows affected: " + rowsAffected);
+        System.out.println("Id after insert: " + poster.getId());
+        return poster;
+
     }
 
     public Poster getPoster(Integer id) {

@@ -17,8 +17,8 @@ public class PosterController {
 
     @PostMapping
     public FileUploadResult handleFileUpload(@RequestParam("file") MultipartFile file) {
-        posterService.addPoster(new Poster(file.getOriginalFilename()));
-        return new FileUploadResult(true, "File successfully uploaded");
+        Poster insertedPoster = posterService.addPoster(new Poster(file.getOriginalFilename()));
+        return new FileUploadResult(insertedPoster.getId(), true, "File successfully uploaded");
     }
 
     @GetMapping("/{id}")
