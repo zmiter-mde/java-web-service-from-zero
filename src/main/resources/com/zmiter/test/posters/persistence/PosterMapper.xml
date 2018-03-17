@@ -7,12 +7,12 @@
     </select>
 
     <select id="getPoster" resultType="Poster" parameterType="Integer">
-        SELECT id, filename FROM posters WHERE id = #{id}
+        SELECT id, filename, image FROM posters WHERE id = #{id}
     </select>
 
-    <insert id="insertPoster" parameterType="Poster">
-        INSERT INTO posters (filename)
-        VALUES (#{filename})
+    <insert id="insertPoster" parameterType="Poster" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO posters (filename, image)
+        VALUES (#{filename}, #{image})
     </insert>
 
 </mapper>

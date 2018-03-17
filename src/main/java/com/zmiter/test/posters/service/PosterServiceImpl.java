@@ -14,12 +14,8 @@ public class PosterServiceImpl implements PosterService {
     private PosterMapper posterMapper;
 
     public Poster addPoster(Poster poster) {
-        System.out.println("Id before insert: " + poster.getId());
-        int rowsAffected = posterMapper.insertPoster(poster);
-        System.out.println("Rows affected: " + rowsAffected);
-        System.out.println("Id after insert: " + poster.getId());
+        posterMapper.insertPoster(poster);
         return poster;
-
     }
 
     public Poster getPoster(Integer id) {
