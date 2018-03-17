@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @RestController
@@ -28,6 +31,17 @@ public class PosterController {
     @GetMapping("/{id}")
     public Poster getPoster(@PathVariable Integer id) {
         return posterService.getPoster(id);
+    }
+
+    @RequestMapping(value = "/image/{id}", method = RequestMethod.GET)
+    public void showImage(@PathVariable Integer id, HttpServletResponse response, HttpServletRequest request)
+            throws ServletException, IOException {
+
+        Poster poster = posterService.getPoster(id);
+        response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+        response.getOutputStream().write(poster.getImage());
+
+        response.getOutputStream().close();
     }
 
 }
